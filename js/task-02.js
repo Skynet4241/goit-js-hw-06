@@ -3,6 +3,7 @@ const list = document.querySelector('#ingredients');
 
 const items = ingredients.map(ingredient => {
   const liEl = document.createElement('li');
+  liEl.classList.add('item');
   liEl.textContent = ingredient;
   return liEl;
 });
