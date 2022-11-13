@@ -9,16 +9,14 @@ form.addEventListener('submit', e => {
 
   const data = new FormData(e.target);
 
-  let values = {};
-
-  data.forEach((value, key) => {
-    values[key] = value;
-  });
-  console.log(values);
-
-  if (email.value === '' && password.value === '') {
+  if (email.value === '' || password.value === '') {
     alert('Error! All fields must be filled in');
   } else {
+    let values = {};
+    data.forEach((value, key) => {
+      values[key] = value;
+    });
+    console.log(values);
     alert('You are successfully logged in ');
   }
   e.currentTarget.reset();
